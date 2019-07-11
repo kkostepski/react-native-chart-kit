@@ -225,7 +225,7 @@ class LineChart extends AbstractChart {
       style = {},
       decorator,
       onDataPointClick,
-      yAxis = true
+      withYAxis = true
     } = this.props
     const {labels = []} = data
     const {borderRadius = 0} = style
