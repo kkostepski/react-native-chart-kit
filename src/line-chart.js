@@ -291,12 +291,13 @@ class LineChart extends AbstractChart {
                 : null}
             </G>
             <G>
-              {yAxis ? this.renderVerticalLabels({
+              {withYAxis &&
+                this.renderVerticalLabels({
                 ...config,
                 labels,
                 paddingRight,
                 paddingTop
-              }): null}
+              })}
             </G>
             <G>
               {this.renderLine({
