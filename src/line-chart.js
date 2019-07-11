@@ -266,7 +266,7 @@ class LineChart extends AbstractChart {
                 : null}
             </G>
             <G>
-              {this.renderHorizontalLabels({
+              {withYAxis && this.renderHorizontalLabels({
                 ...config,
                 count: Math.min(...datas) === Math.max(...datas) ? 1 : 4,
                 data: datas,
@@ -291,8 +291,7 @@ class LineChart extends AbstractChart {
                 : null}
             </G>
             <G>
-              {withYAxis &&
-                this.renderVerticalLabels({
+              {this.renderVerticalLabels({
                 ...config,
                 labels,
                 paddingRight,
