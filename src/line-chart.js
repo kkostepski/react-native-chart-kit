@@ -224,7 +224,8 @@ class LineChart extends AbstractChart {
       withOuterLines = true,
       style = {},
       decorator,
-      onDataPointClick
+      onDataPointClick,
+      yAxis = true
     } = this.props
     const {labels = []} = data
     const {borderRadius = 0} = style
@@ -290,12 +291,12 @@ class LineChart extends AbstractChart {
                 : null}
             </G>
             <G>
-              {this.renderVerticalLabels({
+              {yAxis ? this.renderVerticalLabels({
                 ...config,
                 labels,
                 paddingRight,
                 paddingTop
-              })}
+              }): null}
             </G>
             <G>
               {this.renderLine({
