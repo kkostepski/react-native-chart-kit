@@ -4,6 +4,10 @@ import {LinearGradient, Line, Text, Defs, Stop} from 'react-native-svg'
 
 class AbstractChart extends Component {
   calcScaler = data => {
+    if (typeof this.props.calcScaler === 'function') {
+      return this.props.calcScaler()
+    }
+
     if (this.props.fromZero) {
       return Math.max(...data, 0) - Math.min(...data, 0) || 1
     } else {
