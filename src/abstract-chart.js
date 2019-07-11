@@ -191,16 +191,18 @@ class AbstractChart extends Component {
     const {width, height, backgroundGradientFrom, backgroundGradientTo} = config
     return (
       <Defs>
-        <LinearGradient
-          id="backgroundGradient"
-          x1="0"
-          y1={height}
-          x2={width}
-          y2={0}
-        >
-          <Stop offset="0" stopColor={backgroundGradientFrom} />
-          <Stop offset="1" stopColor={backgroundGradientTo} />
-        </LinearGradient>
+        {backgroundGradientFrom && backgroundGradientTo && (
+          <LinearGradient
+            id="backgroundGradient"
+            x1="0"
+            y1={height}
+            x2={width}
+            y2={0}
+          >
+            <Stop offset="0" stopColor={backgroundGradientFrom} />
+            <Stop offset="1" stopColor={backgroundGradientTo} />
+          </LinearGradient>
+        )}
         <LinearGradient
           id="fillShadowGradient"
           x1={0}
